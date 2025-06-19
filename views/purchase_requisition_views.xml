@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_purchase_requisition_form_inherit" model="ir.ui.view">
+        <field name="name">purchase.requisition.form.inherit.descripcion</field>
+        <field name="model">purchase.requisition</field>
+        <field name="inherit_id" ref="studio_customization.odoo_studio_purchase_a8bc893e-f4b7-4c92-8e6c-4daf2931a9da"/>
+        <field name="priority" eval="331"/>
+        <field name="arch" type="xml">
+
+            <!-- Insertar el campo 'descripcion' después de 'user_id' -->
+            <xpath expr="//field[@name='x_studio_responsable_de_compras']" position="after">
+                <field name="descripcion"/>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

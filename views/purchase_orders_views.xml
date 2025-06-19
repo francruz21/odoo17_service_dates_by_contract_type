@@ -1,0 +1,19 @@
+<odoo>
+    <record id="view_purchase_order_form_inherit" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="studio_customization.odoo_studio_purchase_a9bb47ff-48ce-4cbb-b09a-c59574c95c93"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='x_studio_recibe_1']" position="after">
+                
+                <!-- Campo necesario para los modificadores -->
+                <field name="x_studio_tipo_de_contrato" invisible="1"/>
+
+                <!-- Campos condicionales -->
+
+                <field name="descripcion"/>
+
+            </xpath>
+        </field>
+    </record>
+</odoo>

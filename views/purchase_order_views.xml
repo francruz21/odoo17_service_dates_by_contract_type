@@ -1,0 +1,19 @@
+<odoo>
+    <record id="view_purchase_order_form_inherit" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                
+                <!-- Campo necesario para los modificadores -->
+                <field name="x_studio_tipo_de_contrato" invisible="1"/>
+
+                <!-- Campos condicionales -->
+                <field name="service_delivery_date" invisible="x_studio_tipo_de_contrato not in [2, 4]"/>
+                <field name="service_completion_date" invisible="x_studio_tipo_de_contrato not in [2, 4]"/>
+
+            </xpath>
+        </field>
+    </record>
+</odoo>
